@@ -16,4 +16,3 @@ clean:
 	pipenv --rm
 test:
 	pipenv run py.test --cov=apps --cov-config .coveragerc
-	coverage html
