@@ -39,9 +39,9 @@ INSTALLED_DEFAULT = [
     "django.contrib.staticfiles",
 ]
 
-INSTALLED_LIBS = ["django_extensions"]
+INSTALLED_LIBS = ["django_extensions", "rest_framework"]
 
-INSTALLED_MY_APPS = []
+INSTALLED_MY_APPS = ["apps.core"]
 
 INSTALLED_APPS = INSTALLED_DEFAULT + INSTALLED_LIBS + INSTALLED_MY_APPS
 
