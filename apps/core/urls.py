@@ -1,3 +1,5 @@
+from django.urls import path
+
 from .apiviews import ItsAliveView
 
 app_name = 'core'
