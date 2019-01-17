@@ -8,7 +8,7 @@ python:
 install:
   - "pip install --upgrade pip"
   - "pip install pipenv"
-  - "make install-requirements"
+  - "make install-requirements-dev"
 
 script:
   - "make test"
