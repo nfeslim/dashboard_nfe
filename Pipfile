@@ -18,6 +18,7 @@ black = "*"
 django = "*"
 django-extensions = "*"
 djangorestframework = "*"
+django-auditlog = "*"
 
 [requires]
 python_version = "3.7"
