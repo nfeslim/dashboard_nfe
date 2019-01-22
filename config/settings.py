@@ -39,9 +39,9 @@ INSTALLED_DEFAULT = [
     "django.contrib.staticfiles",
 ]
 
-INSTALLED_LIBS = ["django_extensions", "rest_framework"]
+INSTALLED_LIBS = ["django_extensions", "rest_framework", "auditlog"]
 
-INSTALLED_MY_APPS = ["apps.core"]
+INSTALLED_MY_APPS = ["apps.core", "apps.account"]
 
 INSTALLED_APPS = INSTALLED_DEFAULT + INSTALLED_LIBS + INSTALLED_MY_APPS
 
@@ -116,3 +116,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+AUTH_USER_MODEL = 'account.CustomUser'

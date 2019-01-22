@@ -3,7 +3,7 @@ branch = True
 omit = */tests/*, 
         .venv,
         */admin.py, 
-        */migrations, 
+        */migrations/*, 
         config, 
         *__init__.py,
         manage.py
@@ -14,4 +14,4 @@ omit = */tests/*,
     source =
         apps
 [report]
-    omit = .venv, admin.py, 
+    omit = .venv, admin.py, */migrations/*, 
