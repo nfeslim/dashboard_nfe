@@ -13,6 +13,7 @@ coverage = "*"
 codacy-coverage = "*"
 pytest-cov = "*"
 black = "*"
+pre-commit = "*"
 
 [packages]
 django = "*"
