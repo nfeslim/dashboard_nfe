@@ -7,28 +7,28 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    dependencies = [('account', '0001_initial')]
+    dependencies = [("account", "0001_initial")]
 
     operations = [
         migrations.CreateModel(
-            name='Company',
+            name="Company",
             fields=[
                 (
-                    'id',
+                    "id",
                     models.AutoField(
-                        auto_created=True, primary_key=True, serialize=False, verbose_name='ID'
+                        auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
                     ),
                 ),
-                ('name', models.CharField(max_length=100, verbose_name='Razão Social')),
+                ("name", models.CharField(max_length=100, verbose_name="Razão Social")),
                 (
-                    'owner',
+                    "owner",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
-                        related_name='companies',
+                        related_name="companies",
                         to=settings.AUTH_USER_MODEL,
                     ),
                 ),
             ],
-            options={'verbose_name': 'Company', 'verbose_name_plural': 'Companies'},
+            options={"verbose_name": "Company", "verbose_name_plural": "Companies"},
         )
     ]

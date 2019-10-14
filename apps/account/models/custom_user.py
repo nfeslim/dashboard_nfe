@@ -24,28 +24,28 @@ class PermissionsMixin(models.Model):  # pragma: no cover
     """
 
     is_superuser = models.BooleanField(
-        _('superuser status'),
+        _("superuser status"),
         default=False,
         help_text=_(
-            'Designates that this user has all permissions without ' 'explicitly assigning them.'
+            "Designates that this user has all permissions without " "explicitly assigning them."
         ),
     )
     groups = models.ManyToManyField(
         Group,
-        verbose_name=_('groups'),
+        verbose_name=_("groups"),
         blank=True,
         help_text=_(
-            'The groups this user belongs to. A user will get all permissions '
-            'granted to each of their groups.'
+            "The groups this user belongs to. A user will get all permissions "
+            "granted to each of their groups."
         ),
         related_name="custom_user_set",
         related_query_name="custom_user",
     )
     user_permissions = models.ManyToManyField(
         Permission,
-        verbose_name=_('user permissions'),
+        verbose_name=_("user permissions"),
         blank=True,
-        help_text=_('Specific permissions for this user.'),
+        help_text=_("Specific permissions for this user."),
         related_name="custom_user_set",
         related_query_name="custom_user",
     )
@@ -114,7 +114,7 @@ class CustomUserManager(BaseUserManager):  # pragma: no cover
         """
         now = timezone.now()
         if not email:
-            raise ValueError('The given email must be set')
+            raise ValueError("The given email must be set")
         email = self.normalize_email(email)
 
         user = self.model(
@@ -151,40 +151,40 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     Email and password are required. Other fields are optional.
     """
 
-    email = EmailField(_('email address'), max_length=254, unique=True)
-    first_name = models.CharField(_('first name'), max_length=50, blank=True)
-    last_name = models.CharField(_('last name'), max_length=50, blank=True)
+    email = EmailField(_("email address"), max_length=254, unique=True)
+    first_name = models.CharField(_("first name"), max_length=50, blank=True)
+    last_name = models.CharField(_("last name"), max_length=50, blank=True)
 
     is_staff = models.BooleanField(
-        _('staff status'),
+        _("staff status"),
         default=False,
-        help_text=_('Designates whether the user can log into this admin ' 'site.'),
+        help_text=_("Designates whether the user can log into this admin " "site."),
     )
     is_active = models.BooleanField(
-        _('active'),
+        _("active"),
         default=True,
         help_text=_(
-            'Designates whether this user should be treated as '
-            'active. Unselect this instead of deleting accounts.'
+            "Designates whether this user should be treated as "
+            "active. Unselect this instead of deleting accounts."
         ),
     )
-    date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
+    date_joined = models.DateTimeField(_("date joined"), default=timezone.now)
 
     notes = models.TextField(
-        verbose_name='Observações',
+        verbose_name="Observações",
         blank=True,
-        help_text=_('Observações sobre o usuário ou liberação de uso'),
+        help_text=_("Observações sobre o usuário ou liberação de uso"),
     )
 
     history = AuditlogHistoryField()
     objects = CustomUserManager()
 
-    USERNAME_FIELD = 'email'
+    USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 
     class Meta:
-        verbose_name = _('user')
-        verbose_name_plural = _('users')
+        verbose_name = _("user")
+        verbose_name_plural = _("users")
 
 
 auditlog.register(CustomUser)
