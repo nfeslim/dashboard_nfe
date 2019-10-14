@@ -24,4 +24,4 @@ class TestsCustomUserModel(TestCase):
             notes=self.data_insert.get('notes'),
         )
 
-        assert user.pk
+        self.assertIsNotNone(user.pk)

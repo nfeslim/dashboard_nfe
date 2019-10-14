@@ -20,7 +20,7 @@ class TestsCompanyModel(TestCase):
     def test_insert_company(self):
         company = Company(owner=self.owner, name="company_test")
         company.save()
-        assert company.pk
+        self.assertIsNotNone(company.pk)
 
     def test_str_name_company(self):
         self.assertEqual(
