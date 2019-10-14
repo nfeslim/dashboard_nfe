@@ -9,98 +9,98 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [('auth', '0009_alter_user_last_name_max_length')]
+    dependencies = [("auth", "0009_alter_user_last_name_max_length")]
 
     operations = [
         migrations.CreateModel(
-            name='CustomUser',
+            name="CustomUser",
             fields=[
                 (
-                    'id',
+                    "id",
                     models.AutoField(
-                        auto_created=True, primary_key=True, serialize=False, verbose_name='ID'
+                        auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
                     ),
                 ),
-                ('password', models.CharField(max_length=128, verbose_name='password')),
+                ("password", models.CharField(max_length=128, verbose_name="password")),
                 (
-                    'last_login',
-                    models.DateTimeField(blank=True, null=True, verbose_name='last login'),
+                    "last_login",
+                    models.DateTimeField(blank=True, null=True, verbose_name="last login"),
                 ),
                 (
-                    'is_superuser',
+                    "is_superuser",
                     models.BooleanField(
                         default=False,
-                        help_text='Designates that this user has all permissions without explicitly assigning them.',
-                        verbose_name='superuser status',
+                        help_text="Designates that this user has all permissions without explicitly assigning them.",
+                        verbose_name="superuser status",
                     ),
                 ),
                 (
-                    'email',
+                    "email",
                     apps.core.models.EmailField(
-                        max_length=254, unique=True, verbose_name='email address'
+                        max_length=254, unique=True, verbose_name="email address"
                     ),
                 ),
                 (
-                    'first_name',
-                    models.CharField(blank=True, max_length=50, verbose_name='first name'),
+                    "first_name",
+                    models.CharField(blank=True, max_length=50, verbose_name="first name"),
                 ),
                 (
-                    'last_name',
-                    models.CharField(blank=True, max_length=50, verbose_name='last name'),
+                    "last_name",
+                    models.CharField(blank=True, max_length=50, verbose_name="last name"),
                 ),
                 (
-                    'is_staff',
+                    "is_staff",
                     models.BooleanField(
                         default=False,
-                        help_text='Designates whether the user can log into this admin site.',
-                        verbose_name='staff status',
+                        help_text="Designates whether the user can log into this admin site.",
+                        verbose_name="staff status",
                     ),
                 ),
                 (
-                    'is_active',
+                    "is_active",
                     models.BooleanField(
                         default=True,
-                        help_text='Designates whether this user should be treated as active. Unselect this instead of deleting accounts.',
-                        verbose_name='active',
+                        help_text="Designates whether this user should be treated as active. Unselect this instead of deleting accounts.",
+                        verbose_name="active",
                     ),
                 ),
                 (
-                    'date_joined',
+                    "date_joined",
                     models.DateTimeField(
-                        default=django.utils.timezone.now, verbose_name='date joined'
+                        default=django.utils.timezone.now, verbose_name="date joined"
                     ),
                 ),
                 (
-                    'notes',
+                    "notes",
                     models.TextField(
                         blank=True,
-                        help_text='Observações sobre o usuário ou liberação de uso',
-                        verbose_name='Observações',
+                        help_text="Observações sobre o usuário ou liberação de uso",
+                        verbose_name="Observações",
                     ),
                 ),
                 (
-                    'groups',
+                    "groups",
                     models.ManyToManyField(
                         blank=True,
-                        help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.',
-                        related_name='custom_user_set',
-                        related_query_name='custom_user',
-                        to='auth.Group',
-                        verbose_name='groups',
+                        help_text="The groups this user belongs to. A user will get all permissions granted to each of their groups.",
+                        related_name="custom_user_set",
+                        related_query_name="custom_user",
+                        to="auth.Group",
+                        verbose_name="groups",
                     ),
                 ),
                 (
-                    'user_permissions',
+                    "user_permissions",
                     models.ManyToManyField(
                         blank=True,
-                        help_text='Specific permissions for this user.',
-                        related_name='custom_user_set',
-                        related_query_name='custom_user',
-                        to='auth.Permission',
-                        verbose_name='user permissions',
+                        help_text="Specific permissions for this user.",
+                        related_name="custom_user_set",
+                        related_query_name="custom_user",
+                        to="auth.Permission",
+                        verbose_name="user permissions",
                     ),
                 ),
             ],
-            options={'verbose_name': 'user', 'verbose_name_plural': 'users'},
+            options={"verbose_name": "user", "verbose_name_plural": "users"},
         )
     ]
