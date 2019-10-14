@@ -10,4 +10,4 @@ class TestsEmailField(TestCase):
 
     def test_email_field_none(self):
         email = EmailField()
-        self.assertIsNotNone(email.get_prep_value(None))
+        self.assertIsNone(email.get_prep_value(None))
